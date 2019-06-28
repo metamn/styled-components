@@ -11,3 +11,8 @@ Instead `styled-jss` might be the solution among all other libraries tried: http
 It turned out `jss` is not ready for prime time yet too ... https://github.com/metamn/jss
 
 So trying to maximize what styled components can offer.
+
+## Inspiration
+
+- https://www.jakewiesler.com/blog/using-styled-components-without-template-literals/
+- https://github.com/styled-components/styled-components/issues/2547

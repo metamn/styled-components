@@ -10,7 +10,7 @@ const Theme = {
       backgroundColor: "yellow"
     }
   },
-  textStyles: {
+  text: {
     default: {
       fontSize: "100%",
       lineHeight: "1.25",
