@@ -12,6 +12,10 @@ It turned out `jss` is not ready for prime time yet too ... https://github.com/m
 
 So trying to maximize what styled components can offer.
 
+## The solution
+
+- the `styled-jss` syntax is 100% compatible with `styled-components`
+
 ## Inspiration
 
 - https://www.jakewiesler.com/blog/using-styled-components-without-template-literals/

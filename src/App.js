@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 import ThemeContext from "./Theme";
 
 // createGlobalStyle accepts only tagged template literals
@@ -34,6 +34,9 @@ const Subtitle = styled(Title)([], {
   fontWeight: "normal"
 });
 
+// Referring to other elements
+const OtherElement = styled.div([]);
+
 const List = styled.ul``;
 
 const ListItem = styled.li([], {
@@ -50,7 +53,28 @@ const ListItem = styled.li([], {
     "@media (min-width: 1024px)": {
       textTransform: "uppercase"
     }
+  },
+
+  // Referring to other elements
+  [`& ${OtherElement}`]: {
+    backgroundColor: "black",
+    color: "white",
+
+    // Styling nested children
+    "& span": {
+      fontStyle: "italic"
+    }
   }
+});
+
+// Styling components
+const Comp = props => {
+  const { children } = props;
+  return <div>{children}</div>;
+};
+
+const CompStyled = styled(Comp)([], {
+  border: "1px solid"
 });
 
 const App = () => {
@@ -77,7 +101,18 @@ const App = () => {
             <span>Styling children</span>
           </ListItem>
           <ListItem>
-            <span class="uppercase">Media queries</span>
+            <span className="uppercase">Media queries</span>
+          </ListItem>
+          <ListItem>
+            <OtherElement>Referring to other elements</OtherElement>
+          </ListItem>
+          <ListItem>
+            <OtherElement>
+              <span>Styling nested children</span>
+            </OtherElement>
+          </ListItem>
+          <ListItem>
+            <CompStyled>Styling components</CompStyled>
           </ListItem>
         </List>
       </Container>
