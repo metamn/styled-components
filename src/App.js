@@ -35,6 +35,7 @@ const Subtitle = styled(Title)([], {
 });
 
 // Referring to other elements
+// - See usage later ...
 const OtherElement = styled.div([]);
 
 const List = styled.ul``;
@@ -67,10 +68,10 @@ const ListItem = styled.li([], {
   }
 });
 
-// Styling components
+// Styling components. The parent component has to have a `className`
 const Comp = props => {
-  const { children } = props;
-  return <div>{children}</div>;
+  const { children, className } = props;
+  return <div className={className}>{children}</div>;
 };
 
 const CompStyled = styled(Comp)([], {
@@ -112,7 +113,7 @@ const App = () => {
             </OtherElement>
           </ListItem>
           <ListItem>
-            <CompStyled>Styling components</CompStyled>
+            <CompStyled className="styled">Styling components</CompStyled>
           </ListItem>
         </List>
       </Container>
