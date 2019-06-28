@@ -27,6 +27,12 @@ const Title = styled.h1(props => ({
   ...props.theme.textStyles.large
 }));
 
+const Subtitle = styled.div``;
+
+const List = styled.ul``;
+
+const ListItem = styled.li``;
+
 const App = () => {
   const theme = useContext(ThemeContext);
 
@@ -36,6 +42,12 @@ const App = () => {
       <GlobalStyle2 />
       <Container>
         <Title theme={theme}>Styled components test app</Title>
+        <Subtitle>Features</Subtitle>
+        <List>
+          <ListItem>
+            Global styles works only with tagged template literals
+          </ListItem>
+        </List>
       </Container>
     </>
   );
